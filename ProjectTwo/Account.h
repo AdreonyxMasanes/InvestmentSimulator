@@ -1,4 +1,3 @@
-// TODO FIX INCLUDE GUARD TO INCLUDE FILE
 #ifndef Account_H
 #define Account_H
 #include "iostream"

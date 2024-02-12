@@ -1,4 +1,3 @@
-// TODO FIX INCLUDE GUARD TO INCLUDE FILE
 #ifndef UTILITY_H
 #define UTILITY_H
 #include "Account.h"

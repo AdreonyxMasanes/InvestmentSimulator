@@ -1,11 +1,13 @@
 #include "Account.h"
 #include <cmath>
-// TODO CLEAN UP DEBUGS
 void Account::CalculateAnnualInterest()
 {
 	const int MAX_MONTH = 12;
+	// Calculate Monthly interset
 	const double MONTHLY_INTEREST_RATE = (m_annualInterestRate / 100.00f) / MAX_MONTH;
+	// Each Year starts at zero interest earned
 	m_interestEarnedAnnually = 0;
+	// For each month calculate the interest earned and add it to the current balance and the interest earned annualy
 	for (int currentMonth = 1; currentMonth <= MAX_MONTH; currentMonth++)
 	{
 		m_currentBalance = m_currentBalance + m_monthlyDeposit;
@@ -17,7 +19,7 @@ void Account::CalculateAnnualInterest()
 	m_interestEarnedAnnually = roundToHundredths(m_interestEarnedAnnually);
 	m_currentBalance = roundToHundredths(m_currentBalance);
 }
-
+// Round to the nearest cent
 double Account::roundToHundredths(const double& t_value)
 {
 
@@ -25,7 +27,7 @@ double Account::roundToHundredths(const double& t_value)
 	roundedValue = std::round(t_value * 100) / 100.0;
 	return roundedValue;
 }
-
+// Constructor
 Account::Account(const double& t_initalInvest, const double& t_monthlyDeposit, const double& t_annualInterest, const int& t_yearsOfGrowth)
 	:m_initalInvest(t_initalInvest),
 	 m_monthlyDeposit(t_monthlyDeposit),
